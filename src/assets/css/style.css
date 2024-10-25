@@ -921,7 +921,7 @@ header .container {
 
 
 /*Questions section*/
-#fqas {
+#faqs {
     padding-top: 1rem;
     padding-bottom: 1rem;
     .container {
@@ -931,32 +931,8 @@ header .container {
             text-align: center;
             padding: var(--container-padding);
         }
-        .que-1 {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-
-        }
-        .wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 1rem;
-            padding: 1rem;
-            height: 100%;
-            .icon-1 {
-                display: none;
-            }
-            .icon3 {
-                display: none;
-            }
-            .answer-3 {
-                display: none;
-            }
         
-        }
+
         .indicator {
             background-color: var(--color-primary);
             height: 35px;
@@ -975,20 +951,20 @@ header .container {
             cursor: pointer;
         }
         .que-wrapper {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-areas: "text" "que-icon";
-            justify-content: space-between;
-            align-items: center;
-            gap: 0;
-            padding: 1rem;
-            height: 100%;
-            width: 100%;
+            margin: 5rem auto;
+            
         }
-        .text {
+        .question {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: .7rem;
+            cursor: pointer;
+
+            p {
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
             
         }
         .que-icon {
@@ -1019,6 +995,22 @@ header .container {
         .contact {
             display: none;
         }
+        .answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            overflow: hidden;
+            transition: grid-template-rows 300ms, padding-bottom 300ms;
+            
+        }
+        .open.answer {
+            grid-template-rows: 1fr;
+            padding: .7rem;
+        }
+        .open.btn-circle {
+            background-color: var(--color-primary);
+            rotate: 180deg;
+            color: var(--color-white);
+        }
     }
 
     /*Tablet pages*/
@@ -1026,15 +1018,7 @@ header .container {
         .container {
             display: flex;
             flex-direction: column;
-            .icon-3 {
-                display: none;
-            }
-            .icon1 {
-                display: none;
-            }
-            .answer-1 {
-                display: none;
-            }
+            
             .btn-contact {
                 display: none;
             }
@@ -1046,36 +1030,9 @@ header .container {
                 gap: 1rem;
                 height: 200px;
             } 
-            .que-wrapper {
-                .icon-1 {
-                    display: block;
-                }
-                .icon3 {
-                    display: block;
-                }
-                .answer-3 {
-                    display: block;
-                }
-            }
         }
-        .wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 1rem;
-            padding: 1rem;
-            height: 100%;
-        }
-        .icon3 {
-            display: block;
-        }
-        .icon-1 {
-                display: block;
-            }
-        .answer-3 {
-                display: block;
-        }
-        
+
+
 
         .tel-contact {
             display: flex;
@@ -1107,29 +1064,29 @@ header .container {
     @media (min-width: 1400px) {
         .container {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            grid-template-areas: "content que-wrapper"
-                                "contact que-wrapper";
-                
-            
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "faqs" "que-wrapper";
 
             .content {
-                grid-area: "content";
+                grid-area: "faqs";
                 text-align: start;
                 margin-bottom: 2rem;
                 height: 200px;
 
             } 
             .contact {
-                grid-area: "contact";
+                grid-area: "faqs";
                 margin-top: 2rem;
 
                 
             }
             .que-wrapper {
                 grid-area: "que-wrapper";
+                margin: 5rem auto;
+
             }
-            .contant + .contact {
+            
+            .contant, .contact {
             margin-top: 2rem;
             }
         }
@@ -1436,3 +1393,7 @@ footer {
     }
     }
 }
+
+
+
+

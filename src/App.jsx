@@ -1,9 +1,10 @@
-import './App.css'
+import './assets/css/main.css'
+import './assets/css/style.css'
 import Brands from './components/Brands'
 import Featuer from './components/Featuer'
 import Featuers from './components/Featuers'
 import Footer from './components/Footer'
-import Fqas from './components/Fqas'
+import Faqs from './components/Faqs'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Slider from './components/Slider'
@@ -14,18 +15,20 @@ function App() {
   
 
   return (
-    <>
+    <div className='wrapper'>
       <Header />
-      <Hero />
-      <Brands />
-      <Featuers />
-      <Slider />
-      <Featuer />
-      <Testimonials />
-      <Fqas />
-      <Subscribe />
+      <main>
+        <Hero />
+        <Brands />
+        <Featuers />
+        <Slider />
+        <Featuer />
+        <Testimonials />
+        <Faqs />
+        <Subscribe />
+      </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

@@ -1,5 +1,12 @@
 import React from 'react'
 
+import appstor from '../assets/images/appstor.svg'
+import appstoreDark from '../assets/images/appstore-dark.svg'
+import googleplay from '../assets/images/googleplay.svg'
+import googleplayDark from '../assets/images/googleplay-dark.svg'
+import iPhoneMybudgetDesktop from '../assets/images/iPhone-mybudget-desktop.svg'
+import iPhoneYourcardsDesktop from '../assets/images/iPhone-yourcards-desktop.svg'
+
 const Hero = () => {
   return (
     <section id="hero">
@@ -11,12 +18,12 @@ const Hero = () => {
                         <p>We offer you a new generation of the mobile banking. Save, spend & manage money in your pocket.</p>
                         <div className="buttons">
                             <a className="btn-download-app" href="#">
-                                <img className="show-light" src="images/appstor.svg" alt="appstor" />
-                                <img className="show-dark" src="images/appstore-dark.svg" alt="appstor" />
+                                <img className="show-light" src={appstor} alt="appstor" />
+                                <img className="show-dark" src={appstoreDark} alt="appstor" />
                             </a>
                             <a className="btn-download-app" href="#">
-                                <img className="show-light" src="images/googleplay.svg" alt="google play" />
-                                <img className="show-dark" src="images/googleplay-dark.svg" alt="google play" />
+                                <img className="show-light" src={googleplay} alt="google play" />
+                                <img className="show-dark" src={googleplayDark} alt="google play" />
                             </a>
                         </div>
 
@@ -29,8 +36,8 @@ const Hero = () => {
                     </div>
 
                     <div className="images">
-                        <img className="img-back" src="images/iPhone-mybudget-desktop.svg" alt="iphone my budget." />
-                        <img className="img-front" src="images/iPhone-yourcards-desktop.svg" alt="iphone your cards." />
+                        <img className="img-back" src={iPhoneMybudgetDesktop} alt="iphone my budget." />
+                        <img className="img-front" src={iPhoneYourcardsDesktop} alt="iphone your cards." />
                     </div>
                 </div>
             

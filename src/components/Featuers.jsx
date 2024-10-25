@@ -1,12 +1,20 @@
 import React from 'react'
+import iPhoneBackCard from '../assets/images/iPhone-back-card.svg'
+import card from '../assets/images/card.svg'
+import payments from '../assets/images/payments.svg'
+import security from '../assets/images/security.svg'
+import statistics from '../assets/images/statistics.svg'
+import support from '../assets/images/support.svg'
+import cashback from '../assets/images/cashback.svg'
+import happy from '../assets/images/happy.svg'
 
 const Featuers = () => {
   return (
     <section id="featuers">
                 <div className="container">
                             <div className="images">
-                                <img className="img-phon" src="images/iPhone-back-card.svg" alt="iphone may budget back" />
-                                <img className="img-card" src="images/card.svg" alt="your card" />
+                                <img className="img-phon" src={iPhoneBackCard} alt="iphone may budget back" />
+                                <img className="img-card" src={card} alt="your card" />
                             </div>
                         <div className="app-featuer">
                             <div className="content">
@@ -16,7 +24,7 @@ const Featuers = () => {
                             <div className="featuer">
                                 <div className="wrapper">
                                     <div className="featuer-icon">
-                                        <img src="images/payments.svg" alt="payments card" />  
+                                        <img src={payments} alt="payments card" />  
                                     </div>
                                     <div>    
                                         <h3>Easy Payments</h3>
@@ -25,7 +33,7 @@ const Featuers = () => {
                                 </div>
                                 <div className="wrapper">
                                     <div className="featuer-icon">
-                                        <img src="images/security.svg" alt="data security" /> 
+                                        <img src={security} alt="data security" /> 
                                     </div>     
                                     <div>    
                                         <h3>Data Security</h3>
@@ -34,7 +42,7 @@ const Featuers = () => {
                                 </div>
                                 <div className="wrapper">
                                     <div className="featuer-icon">
-                                        <img src="images/statistics.svg" alt="cost statistics" /> 
+                                        <img src={statistics} alt="cost statistics" /> 
                                     </div>  
                                     <div>    
                                         <h3>Cost Statistics</h3>
@@ -43,7 +51,7 @@ const Featuers = () => {
                                 </div>
                                 <div className="wrapper">
                                     <div className="featuer-icon">
-                                        <img src="images/support.svg" alt="support" />
+                                        <img src={support} alt="support" />
                                     </div>
                                     <div>
                                         <h3>Support 24/7</h3>
@@ -53,7 +61,7 @@ const Featuers = () => {
 
                                 <div className="wrapper">    
                                     <div className="featuer-icon">
-                                        <img src="images/cashback.svg" alt="regular cashback" />   
+                                        <img src={cashback} alt="regular cashback" />   
                                     </div>
                                     <div>
                                         <h3>Regular Cashback</h3>
@@ -63,7 +71,7 @@ const Featuers = () => {
 
                                 <div className="wrapper">
                                     <div className="featuer-icon">
-                                        <img src="images/happy.svg" alt="happy" />
+                                        <img src={happy} alt="happy" />
                                     </div>
                                     <div> 
                                         <h3>Top Standards</h3>

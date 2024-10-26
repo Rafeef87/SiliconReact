@@ -960,6 +960,7 @@ header .container {
             align-items: center;
             padding: .7rem;
             cursor: pointer;
+            
 
             p {
                 font-size: 1.3rem;
@@ -1006,7 +1007,11 @@ header .container {
             grid-template-rows: 1fr;
             padding: .7rem;
         }
-        .open.btn-circle {
+        .btn-circle {
+
+                transition: all 300ms;
+            }
+        .open .btn-circle{
             background-color: var(--color-primary);
             rotate: 180deg;
             color: var(--color-white);

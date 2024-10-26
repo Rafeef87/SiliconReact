@@ -1,6 +1,7 @@
 import React from 'react'
 import silicon from '../assets/images/Navbar/silicon.svg'
 import solidDark from '../assets/images/Navbar/solid-dark.svg'
+import DarkModeSwitch from './DarkModeSwitch'
 
 
 const Header = () => {
@@ -15,13 +16,9 @@ const Header = () => {
                         <a className="nav-link" href="#">Features</a>
                         <a className="nav-link" href="/contact.html">Contact</a>
                     </nav>
-                    <div id="darkmode-toggle-switch" className="btn-toggle-switch">
-                        <span className="label">Dark mode</span>
-                        <label htmlFor="darkmode-switch" className="toggle-switch">
-                            <input id="darkmode-switch" type="checkbox" />
-                            <span className="slider round"></span>
-                        </label>
-                    </div>
+
+                    <DarkModeSwitch />
+                    
                     <a id="auth-signin" href="#" className="btn-primary">
                         <i className="fa-duotone fa-solid fa-user-large"></i>
                         <span>Sign in / up</span>

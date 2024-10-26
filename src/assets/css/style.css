@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-:root {
+:root[data-theme="light"] {
     --color-dark: #0B0F19;
     --color-primary: #6366F1;
     --color-gray: #9397AD;
@@ -26,7 +26,8 @@ html {
 .show-light {display: block;}
 .show-dark {display: none;}
 
-.dark {
+:root[data-theme="dark"] {
+
     color-scheme: dark;
 
     --color-dark: #0B0F19;

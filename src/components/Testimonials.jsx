@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import quotes from '../assets/images/quotes.svg'
 import rating from '../assets/images/rating.svg'
@@ -8,39 +8,48 @@ import boy from '../assets/images/boy.svg'
 
 
 const Testimonials = () => {
+    const [testimonials, setTestimonials] = useState([])
+    
+    const fetchData = async () => {
+        try {
+            const res = await fetch('https://win24-assignment.azurewebsites.net/api/testimonials')
+            if(!res.ok) {
+                console.log('Failed to fetch testimonials')
+                alert('Failed to fetch testimonials')
+            }
+            const data = await res.json()
+            setTestimonials(data)
+        } catch (error) {
+            console.log(error)
+        }      
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
   return (
     <section id="testimonials">
-                <div className="container">
-                    <h2 className="headline">Clients are Loving Our App</h2>
-                    <div className="girl-rating">
-                        <img src={quotes} alt="quotes icon." />
-                        <img src={rating} alt="rating." />
-                        <p>Sit pretium aliquam tempor, orci dolor sed maecenas rutrum sagittis. Laoreet posuere rhoncus, egestas lacus, egestas justo aliquam vel. Nisi vitae lectus hac hendrerit. Montes justo turpis sit amet.</p>
-                        <div className="girl">
-                            <img className="icon" src={girl} alt="girl emoji." />
-                            <div className="text">
-                                <p>Fannie Summers</p>
-                                <p>Designer</p>
-                            </div>
-                        </div>
+        <div className="container">
+            <h2 className="headline">Clients are Loving Our App</h2>
+            {testimonials.map((testimonial, index) => (
+                <div key={testimonial.id} className={index % 2 === 0 ? 'girl-rating' : 'boy-rating'}>
+                    <img src={quotes} alt="quotes icon." />
+                    <img src={index % 2 === 0 ? rating : rating1} alt="rating." />
+                    <p>{testimonial.comment}</p>
+                    <div className={index % 2 === 0 ? 'girl' : 'boy'}>
+                    <img className="icon" src={index % 2 === 0 ? girl : boy} alt={index % 2 === 0 ? 'girl emoji.' : 'boy emoji.'} />
+                    <div className='text'>
+                        <p>{testimonial.author}</p>
                     </div>
-                    <div className="boy-rating">
-                        <img src={quotes} alt="quotes icon." />
-                        <img src={rating1} alt="rating." />
-                        <p>Nunc senectus leo vel venenatis accumsan vestibulum sollicitudin amet porttitor. Nisl bibendum nulla tincidunt eu enim ornare dictumst sit amet. Dictum pretium dolor tincidunt egestas eget nunc.</p>
-                        <div className="boy">
-                            <img className="icon" src={boy} alt="boy emoji." />
-                            <div className="text">
-                                <p>Albert Flores</p>
-                                <p>Developer</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
-
-
-            </section>
-  )
+            ))}
+                
+                
+        </div>
+    </section>
+)
 }
 
 export default Testimonials

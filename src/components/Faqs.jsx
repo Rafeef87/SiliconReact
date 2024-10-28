@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import telefon from '../assets/images/telefon.svg'
 import message from '../assets/images/message.svg'
 import FaqCard from './FaqCard'
+import { Link } from 'react-router-dom'
 
 const Faqs = () => {
     
@@ -45,22 +46,22 @@ const Faqs = () => {
                 <div className="tel-contact">
                     <img src= {telefon} alt="Telephone image." />
                     <p>Still have  questions?</p>
-                    <a href="/contact.html">
+                    <Link to="/contact">
                         <span>Contact us </span>
                         <span className="btn">
                             <i className="fa-regular fa-arrow-right"></i>
                         </span>
-                    </a>
+                    </Link>
                 </div>
                 <div className="sms-contact">
                     <img src= {message} alt="SMS image." />
                     <p>Don't like phone calls?</p>
-                    <a href="/contact.html" className="green-text">
+                    <Link to="/contact" className="green-text">
                         <span>Contact us </span>
                         <span className="btn"> 
                             <i className="fa-regular fa-arrow-right"></i>
                         </span>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

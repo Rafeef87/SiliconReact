@@ -6,6 +6,7 @@ import googleplay from '../assets/images/googleplay.svg'
 import googleplayDark from '../assets/images/googleplay-dark.svg'
 import iPhoneMybudgetDesktop from '../assets/images/iPhone-mybudget-desktop.svg'
 import iPhoneYourcardsDesktop from '../assets/images/iPhone-yourcards-desktop.svg'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
@@ -27,12 +28,12 @@ const Hero = () => {
                             </a>
                         </div>
 
-                        <a href="#" className="discover-more">
+                        <Link to="/" className="discover-more">
                             <span className="btn-circle">
                                 <i className="fa-solid fa-chevron-down"></i>
                             </span>
                             <span>Discover more</span>
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="images">

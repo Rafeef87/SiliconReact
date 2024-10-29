@@ -1,22 +1,38 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import telefon from '../assets/images/telefon.svg'
 import message from '../assets/images/message.svg'
-import FaqCard from './FaqCard'
+
 import { Link } from 'react-router-dom'
+import FaqCard from './FaqCard'
 
 const Faqs = () => {
     
+    
+
+    const [faq, setFaq] = useState([])
+    
+    const fetchData = async () => {
+        try {
+            const res = await fetch('https://win24-assignment.azurewebsites.net/api/faq')
+            console.log('Response status: ', res.status)
+            if(!res.ok) {
+                console.log('Failed to fetch questions')
+                alert('Failed to fetch questions')
+                return;
+            }
+            const data = await res.json()
+            console.log('Fetched data: ', data)
+            setFaq(data)
+        } catch (error) {
+            console.log(error)
+        }      
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
     const [open, setOpen] = useState(null)
-
-    const faqCards= [
-        {id: 1, question: "Is any of my personal information stored in the App?", answer: "Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod  montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat. Ornare senectus fusce dignissim ut. Integer consequat in eu tortor, faucibus et lacinia posuere. Turpis sit viverra lorem suspendisse lacus aliquam auctor vulputate. Quis egestas aliquam nunc purus lacus, elit leo elit facilisi. Dignissim amet adipiscing massa integer."},
-        {id: 2, question: "What formats can I download my transaction history in?" , answer: ""},
-        {id: 3, question: "Can I schedule future transfers?", answer:"Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat." },
-        {id: 4, question: "When can I use Banking App services?" , answer: ""},
-        {id: 5, question: "Can I create my own password that is easy for me to remember?", answer: ""},
-        {id: 6, question: "What happens if I forget or lose my password?", answer: ""}
-    ]
-
     const handleQuestionClick = (index) => {
         setOpen(prevIndex => (prevIndex === index ? null : index))
     }
@@ -30,14 +46,16 @@ const Faqs = () => {
             </div>
             
             <div className="que-wrapper">
-                {faqCards.map((item, index) => (
-                    <FaqCard key={item.id} 
-                    item={item}
+                {
+                faq.map((faqs, index) => (
+                    <FaqCard key={faqs.id} 
+                    item={faqs.title}
                     open={open}
                     index={index}
                     handleQuestionClick={handleQuestionClick}
                     />
-                ))}
+                )
+                )}
             </div>
 
             <a id="contact-us-now" href="/contact.html" className="btn-contact">Contact us now</a>

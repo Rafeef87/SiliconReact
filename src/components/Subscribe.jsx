@@ -1,16 +1,12 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-
-import notification from '../assets/images/notification-icon-.svg'
 import { useForm } from 'react-hook-form'
-
+import notification from '../assets/images/notification-icon-.svg'
 
 const Subscribe = () => {
 /*Form av validering*/
-
 const [submitted, setSubmitted] = useState(false)
 const {register, handleSubmit, reset, formState: { errors }} = useForm()
-
 
 const handleOk = () => {
   setSubmitted(false)

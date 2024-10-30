@@ -14,11 +14,10 @@ const Navbar = () => {
                         <img className="show-light" src={silicon} alt="Silicon Logotype." />
                         <img className="show-dark" src={solidDark} alt="Silicon Logotype." />
                     </Link>
-                        <nav id="main-menu" className="nav-bar" onClick={() => {
-                                setIsActive(prev => !prev)
-                            }}>
+                        <nav id="main-menu" className="nav-bar" >
                             <a className="nav-link" to="/">Features</a>
-                            <Link  className={`navlink ${isActive && 'active'}`} to="/contact">Contact</Link>
+                            <Link className="nav-link" to="/contact" onClick={ () => { setIsActive(prev = !prev)}}>Contact</Link>
+                            {` ${isActive ? 'active' : ''}`}
                         </nav>
                     <DarkModeSwitch />
                     

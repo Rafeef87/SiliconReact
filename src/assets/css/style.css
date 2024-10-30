@@ -1433,7 +1433,54 @@ footer {
     }
     }
 }
+#map-contact {
+    .container {
+        .map-contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
 
+        }
+        .map{
+            margin: 2rem;
+            padding: 2rem;
+            gap: 2rem;
+        }
+        .image {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            height: 500px;
+        }
+        .medical-center{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            padding: 1rem;
+            gap: 1rem;
+            .map-info {
+                color: var(--color-gray700);
+                gap: 1rem;
+            }
+            .time {
+                display: flex;
+                flex-direction: column; 
+            }
+            .times {
+                display: flex;
+                justify-content: start;
+                align-items: flex-start;
+            }
+        }
+        .socail-media {
+            margin: 1rem;
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 300px;
+        }
+    }
+}
 
 
 

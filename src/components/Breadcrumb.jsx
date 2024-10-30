@@ -9,7 +9,7 @@ const Breadcrumb = () => {
     <section className="page-title">
       <div className="container">
         <li>
-          <Link to="/"><i className="fa-regular fa-house"></i> Home</Link>
+          <Link to="/" className='home'><i className="fa-regular fa-house"></i> Home</Link>
           <Link to="/"><i className="fa-solid fa-chevrons-right icon"></i> Contact</Link>
         </li>
         <ul className='breadcrumb'>

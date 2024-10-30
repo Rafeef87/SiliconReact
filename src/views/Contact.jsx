@@ -6,12 +6,10 @@ import bxEnvelope from '../assets/images/Contact/bx-envelope.svg'
 import addGroup from '../assets/images/Contact/add-group.svg'
 import Breadcrumb from '../components/Breadcrumb'
 
-
 const Contact = () => {
 
 const [submitted, setSubmitted] = useState(false)
 const {register, handleSubmit, reset, formState: { errors }} = useForm()
-
 
 const handleOk = () => {
   setSubmitted(false)
@@ -24,19 +22,17 @@ const onSubmit = async (data) => {
     setSubmitted(true)
     reset()
   }
-  
 }
 
   if (submitted) {
     return (
     <div className="container informatbox">
-      <h1>Thanks for your subscribe</h1>
+      <h1>We will get back to you as soon as we can</h1>
       <button className='btn-primary' onClick={handleOk}>OK</button>
     </div>
     )
   }
   
-
   return (
     <>
       <Breadcrumb />

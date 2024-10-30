@@ -1333,7 +1333,9 @@ footer {
 
 .page-title {
     margin-top: 5rem;
-    
+    i, .home {
+        color: var(--color-gray);
+    }
 }
 
 .breadcrumb {

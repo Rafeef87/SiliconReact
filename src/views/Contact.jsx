@@ -97,7 +97,7 @@ const onSubmit = async (data) => {
                         <div className="input-group">
                             <label htmlFor="specialist" className="form-label">Specialist</label>
                             <div className="specialist">
-                                <input type="text" id="specialist" className="form-input" {...register('specialist', { required: 'The emaspecialistil field is required'})}/>
+                                <input type="text" id="specialist" className="form-input" {...register('specialist', { required: 'The specialist field is required'})}/>
                                 <span>{errors.email && errors.email.message}</span>
                                 <i className="fa-solid fa-chevron-down icon"></i>
                             </div>

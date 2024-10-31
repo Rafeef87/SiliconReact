@@ -6,13 +6,11 @@ import { Link } from 'react-router-dom'
 import FaqCard from './FaqCard'
 
 const Faqs = () => {
-    
-    
 
-    const [faq, setFaq] = useState([])
+    const [faqs, setFaqs] = useState([])
     
     const fetchData = async () => {
-        try {
+
             const res = await fetch('https://win24-assignment.azurewebsites.net/api/faq')
             console.log('Response status: ', res.status)
             if(!res.ok) {
@@ -22,17 +20,15 @@ const Faqs = () => {
             }
             const data = await res.json()
             console.log('Fetched data: ', data)
-            setFaq(data)
-        } catch (error) {
-            console.log(error)
-        }      
+            setFaqs(data)
+  
     }
 
     useEffect(() => {
         fetchData()
     }, [])
 
-    const [open, setOpen] = useState(null)
+    const [open, setOpen] = useState(false)
     const handleQuestionClick = (index) => {
         setOpen(prevIndex => (prevIndex === index ? null : index))
     }
@@ -46,17 +42,18 @@ const Faqs = () => {
             </div>
             
             <div className="que-wrapper">
-                {
-                faq.map((faqs, index) => (
-                    <FaqCard key={faqs.id} 
-                    item={faqs.title}
-                    open={open}
-                    index={index}
+                {faqs.map((faq, index) => (
+                    <FaqCard 
+                    key={faq.id} 
+                    question={faq.title}
                     handleQuestionClick={handleQuestionClick}
+                    isOpen={open}
+                    index={index}
+                    answer={faq.content}
                     />
-                )
-                )}
+                ))}
             </div>
+
 
             <a id="contact-us-now" href="/contact.html" className="btn-contact">Contact us now</a>
 

@@ -967,7 +967,7 @@ header .container {
                 font-size: 1.3rem;
                 font-weight: 600;
             }
-            
+ 
         }
         .que-icon {
             display: grid;
@@ -1003,10 +1003,12 @@ header .container {
             overflow: hidden;
             transition: grid-template-rows 300ms, padding-bottom 300ms;
             
-        }
-        .open.answer {
+        
+        .open .answer {
             grid-template-rows: 1fr;
             padding: .7rem;
+            color: var(--color-gray600);
+            }
         }
         .btn-circle {
 

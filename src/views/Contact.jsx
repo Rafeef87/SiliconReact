@@ -9,10 +9,8 @@ import map from '../assets/images/Contact/map.svg'
 import boxMap from '../assets/images/Contact/bx-map.svg'
 import call from '../assets/images/Contact/bx-phone-call.svg'
 import time from '../assets/images/Contact/bx-time-five.svg'
-import facebook from '../assets/images/Contact/facebook.svg'
-import twitter from '../assets/images/Contact/twitter.svg'
-import instagram from '../assets/images/Contact/instagram.svg'
-import youtub from '../assets/images/Contact/youtub.svg'
+import SocialMediaLinks from '../components/SocialMediaLinks'
+
 
 const Contact = () => {
 
@@ -154,10 +152,7 @@ const onSubmit = async (data) => {
                             </div>
                         </div>
                         <div className="socail-media">
-                        <img src={facebook} alt="facebook icon." />
-                        <img src={twitter} alt="Twitter icon." />
-                        <img src={instagram} alt="Instagram icon." />
-                        <img src={youtub} alt="Youtub icon." />
+                        <SocialMediaLinks />
                         </div>
                     </div>
                 </div>

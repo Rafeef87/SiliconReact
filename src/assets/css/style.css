@@ -1335,6 +1335,7 @@ footer {
 
 .page-title {
     margin-top: 5rem;
+    
     i, .home {
         color: var(--color-gray);
     }
@@ -1437,6 +1438,7 @@ footer {
 }
 #map-contact {
     .container {
+        height: 1000px;
         .map-contact {
             display: grid;
             grid-template-columns: 1fr 1fr;

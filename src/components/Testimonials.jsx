@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { StarRating } from "star-ratings-react";
 
 import quotes from '../assets/images/quotes.svg'
-import rating from '../assets/images/rating.svg'
-import girl from '../assets/images/girl.svg'
-import rating1 from '../assets/images/rating1.svg'
-import boy from '../assets/images/boy.svg'
-
 
 const Testimonials = () => {
     const [testimonials, setTestimonials] = useState([])
@@ -19,14 +15,24 @@ const Testimonials = () => {
             }
             const data = await res.json()
             setTestimonials(data)
+                
+
         } catch (error) {
             console.log(error)
-        }      
+        }     
+
     }
 
     useEffect(() => {
         fetchData()
     }, [])
+
+    function  StarRating () {
+        const setRating = useState(); // setting initial rating 
+        setRating(data)
+    }
+             
+
 
   return (
     <section id="testimonials">
@@ -35,12 +41,15 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
                 <div key={testimonial.id} className={index % 2 === 0 ? 'girl-rating' : 'boy-rating'}>
                     <img src={quotes} alt="quotes icon." />
-                    <img src={index % 2 === 0 ? rating : rating1} alt="rating." />
+                    <div className='colors'>
+                        <span> <StarRating rating={testimonial.starRating} /></span>
+                    </div>
                     <p>{testimonial.comment}</p>
                     <div className={index % 2 === 0 ? 'girl' : 'boy'}>
-                    <img className="icon" src={index % 2 === 0 ? girl : boy} alt={index % 2 === 0 ? 'girl emoji.' : 'boy emoji.'} />
+                    <img className="icon" src={testimonial.avatarUrl} />
                     <div className='text'>
                         <p>{testimonial.author}</p>
+                        <p>{testimonial.jobRole}</p>
                     </div>
                     </div>
                 </div>

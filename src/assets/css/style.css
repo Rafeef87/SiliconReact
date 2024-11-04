@@ -143,6 +143,22 @@ a:hover{
     border: none;
     font-size: 2rem;
 }
+.btn-mobile.show {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-gray100);
+    border-radius: 50%;
+    border: 1px solid var(--color-border-gray700);
+    height: 44px;
+    width: 44px;
+    .btn-toggle-switch {
+        display: none;
+    }
+
+}
 
 .btn-circle {
     height: 44px;
@@ -214,6 +230,21 @@ display: none;
 .navbar {
     display: none;
     
+}
+.navbar.show {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+    padding-left: 5rem;
+    background-color: var(--color-gray600);
+    height: 100%;
+    width: 100%;
+    .btn-toggle-switch {
+        display: none;
+    }
 }
 .nav-link {
     color: var(--color-gray900);
@@ -920,6 +951,7 @@ header .container {
     }
     .colors {
         .container {
+            
         padding: 0;
         margin: 0;
          overflow: hidden;
@@ -930,6 +962,7 @@ header .container {
         }
         span {
             color: var(--color-gray);
+            flex-shrink: 5;
         }
      
     }

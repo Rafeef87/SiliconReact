@@ -27,7 +27,7 @@ const Testimonials = () => {
         fetchData()
     }, [])
 
-    function  StarRating () {
+    function  StarsRating () {
         const setRating = useState(); // setting initial rating 
         setRating(data)
     }

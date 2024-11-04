@@ -7,7 +7,6 @@ declare module 'star-ratings-react' {
         changeRating?: (newRating: number) => void;
         // Add other props as needed
     }
-    return 
 
     export const StarRating: React.FC<StarRatingProps>;
     export default StarRating;

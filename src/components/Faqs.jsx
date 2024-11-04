@@ -1,32 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import telefon from '../assets/images/telefon.svg'
 import message from '../assets/images/message.svg'
 
 import { Link } from 'react-router-dom'
 import FaqCard from './FaqCard'
+import { ClientsContext } from '../context/ClientsContext'
 
 const Faqs = () => {
 
-    const [faqs, setFaqs] = useState([])
-    
-    const fetchData = async () => {
-
-            const res = await fetch('https://win24-assignment.azurewebsites.net/api/faq')
-            console.log('Response status: ', res.status)
-            if(!res.ok) {
-                console.log('Failed to fetch questions')
-                alert('Failed to fetch questions')
-                return;
-            }
-            const data = await res.json()
-            console.log('Fetched data: ', data)
-            setFaqs(data)
-  
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [])
+const { clients } = useContext(ClientsContext)
+const filteredClients = clients.filter (client => client.tags && client.tags.includes("Faqs"))
 
     const [open, setOpen] = useState(false)
     const handleQuestionClick = (index) => {
@@ -42,16 +25,16 @@ const Faqs = () => {
             </div>
             
             <div className="que-wrapper">
-                {faqs.map((faq, index) => (
+                {filteredClients.map((client, index) => (
                     <FaqCard 
-                    key={faq.id} 
-                    question={faq.title}
+                    key={client.id} 
+                    client={client}
                     handleQuestionClick={handleQuestionClick}
-                    isOpen={open}
+                    isOpen={open === index}
                     index={index}
-                    answer={faq.content}
                     />
-                ))}
+                    ))}
+
             </div>
 
 

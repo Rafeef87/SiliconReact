@@ -950,22 +950,17 @@ header .container {
         width: 300px;
     }
     .colors {
-        .container {
-            
-        padding: 0;
-        margin: 0;
-         overflow: hidden;
-        p {
-            display: none;
-        }
-        
-        }
-        span {
+
+        .star-icon {
             color: var(--color-gray);
-            flex-shrink: 5;
+            
         }
-     
+        .star-icon.active {
+            color: gold;
+        }
     }
+    
+     
 }
 
 

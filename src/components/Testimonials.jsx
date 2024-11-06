@@ -1,21 +1,14 @@
 import React, { useContext, useState } from 'react'
-import { StarRating } from "star-ratings-react";
+
 import { ClientsContext } from '../context/ClientsContext'
 import quotes from '../assets/images/quotes.svg'
 
 
 const Testimonials = () => {
     
-    const { clients } = useContext(ClientsContext)
+    const { clients, starRating } = useContext(ClientsContext)      
+
     
-
-   
-    function  StarsRating () {
-        const setRating = useState(); // setting initial rating 
-        setRating(data)
-    }
-             
-
 
   return (
     <section id="testimonials">
@@ -24,12 +17,22 @@ const Testimonials = () => {
             {clients.map((client) => (
                 <div key={client.id} >
                     <img src={quotes} alt="quotes icon." />
-                    <div className='colors'>
-                        <span> <StarRating rating={StarRating.starRating} /></span>
-                    </div>
+                    <div className="colors">
+                        {[...Array(5)].map((_, index) => (
+                            <span key={`${client.id}-star-${index}`}>
+                                <i
+                                    className={`fa-light fa-star star-icon ${
+                                        index < client.starRating ? 'active' : ''
+                                    }`}
+                                ></i>
+                            </span>
+                        ))}    
+                </div>
+                
+
                     <p>{client.comment}</p>
                     
-                    <img className="icon" src={client.avatarUrl} />
+                    <img className="icon" src={client.avatarUrl} alt="Girl icon." />
                     <div className='text'>
                         <p>{client.author}</p>
                         <p>{client.jobRole}</p>

@@ -1,32 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { StarRating } from "star-ratings-react";
-
+import { ClientsContext } from '../context/ClientsContext'
 import quotes from '../assets/images/quotes.svg'
 
+
 const Testimonials = () => {
-    const [testimonials, setTestimonials] = useState([])
     
-    const fetchData = async () => {
-        try {
-            const res = await fetch('https://win24-assignment.azurewebsites.net/api/testimonials')
-            if(!res.ok) {
-                console.log('Failed to fetch testimonials')
-                alert('Failed to fetch testimonials')
-            }
-            const data = await res.json()
-            setTestimonials(data)
-                
+    const { clients } = useContext(ClientsContext)
+    
 
-        } catch (error) {
-            console.log(error)
-        }     
-
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [])
-
+   
     function  StarsRating () {
         const setRating = useState(); // setting initial rating 
         setRating(data)
@@ -38,20 +21,20 @@ const Testimonials = () => {
     <section id="testimonials">
         <div className="container">
             <h2 className="headline">Clients are Loving Our App</h2>
-            {testimonials.map((testimonial, index) => (
-                <div key={testimonial.id} className={index % 2 === 0 ? 'girl-rating' : 'boy-rating'}>
+            {clients.map((client, index) => (
+                <div key={client.id} >
                     <img src={quotes} alt="quotes icon." />
                     <div className='colors'>
-                        <span> <StarRating rating={testimonial.starRating} /></span>
+                        <span> <StarRating rating={StarRating.starRating} /></span>
                     </div>
-                    <p>{testimonial.comment}</p>
-                    <div className={index % 2 === 0 ? 'girl' : 'boy'}>
-                    <img className="icon" src={testimonial.avatarUrl} />
+                    <p>{client.comment}</p>
+                    
+                    <img className="icon" src={client.avatarUrl} />
                     <div className='text'>
-                        <p>{testimonial.author}</p>
-                        <p>{testimonial.jobRole}</p>
+                        <p>{client.author}</p>
+                        <p>{client.jobRole}</p>
                     </div>
-                    </div>
+                    
                 </div>
             ))}
                 

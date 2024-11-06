@@ -1,14 +1,14 @@
-import React from 'react'
 
-const FaqCard = ({question, answer, index, isOpen, handleQuestionClick}) => {
+
+const FaqCard = ({client, index, isOpen, handleQuestionClick}) => {
     
 
   return (
-
+   
     <div className="faq-card">
-        <div className={`question ${isOpen === index ? 'open' : ''} `} onClick={() => handleQuestionClick(index)} >
+        <div className={`client ${isOpen === index ? 'open' : ''} `} onClick={() => handleQuestionClick(index)} >
             
-            <h3>{question}</h3>
+            <h3>{client.title}</h3>
             
             <a className="btn-circle">
                 <span>
@@ -18,10 +18,11 @@ const FaqCard = ({question, answer, index, isOpen, handleQuestionClick}) => {
         </div>
         {isOpen === index && (
         <div className="answer" >
-            <p>{answer}</p>
+            <p>{client.content}</p>
         </div>
         )}
     </div>
+       
   )
 }
 

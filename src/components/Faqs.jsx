@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import telefon from '../assets/images/telefon.svg'
 import message from '../assets/images/message.svg'
 
@@ -6,10 +6,9 @@ import { Link } from 'react-router-dom'
 import FaqCard from './FaqCard'
 import { ClientsContext } from '../context/ClientsContext'
 
-const Faqs = () => {
 
-const { clients } = useContext(ClientsContext)
-const filteredClients = clients.filter (client => client.tags && client.tags.includes("Faqs"))
+const Faqs = () => {
+    const { clients } = useContext(ClientsContext)
 
     const [open, setOpen] = useState(false)
     const handleQuestionClick = (index) => {
@@ -25,18 +24,10 @@ const filteredClients = clients.filter (client => client.tags && client.tags.inc
             </div>
             
             <div className="que-wrapper">
-                {filteredClients.map((client, index) => (
-                    <FaqCard 
-                    key={client.id} 
-                    client={client}
-                    handleQuestionClick={handleQuestionClick}
-                    isOpen={open === index}
-                    index={index}
-                    />
+                { clients.map((client, index) => (
+                    <FaqCard key={client.id} client={client} handleQuestionClick={handleQuestionClick} isOpen={open} index={index} />
                     ))}
-
             </div>
-
 
             <a id="contact-us-now" href="/contact.html" className="btn-contact">Contact us now</a>
 

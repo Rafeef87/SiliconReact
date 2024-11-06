@@ -1,27 +1,46 @@
 import React, { createContext, useState, useEffect} from "react";
 
-export const ClientsContext = createContext()
+export const ClientsContext = createContext();
 
-const ClientProvider = ({Children}) => {
-    const baseApiUri = `https://win24-assignment.azurewebsites.net/api/`
+const ClientProvider = ({ children }) => {
+    const baseApiUri = (`https://win24-assignment.azurewebsites.net/api`)
     const [clients, setClients] = useState([])
     const [client, setClient] = useState({})
-    const getClient = async(id) => {
-        const res = await fetch(baseApiUri + `${id}`)
-        const data = await res.json()
-        setClient(data)
-    }
-}
-useEffect (() => {
-    const fetchData = async () => {
-        const res = await fetch(baseApiUri)
+
+    const fetchTimonials = async () => {
+        const res = await fetch(`${baseApiUri}/testimonials`)
         const data = await res.json()
         setClients(data)
     }
-    fetchData()
-}, [])
+    const getClient = async (id) => {
+        const res = await fetch(`${baseApiUri}/testimonials/${id}`)
+        const data = await res.json()
+        setClient(data)
+    }
+    useEffect(() => {
+
+        fetchTimonials()
+    }, [])
+
+    const fetchFaq = async () => {
+        const res = await fetch(`${baseApiUri}/faq`)
+        const data = await res.json()
+        setClients(data)
+    }
+    const get = async (id) => {
+        const res = await fetch(`${baseApiUri}/faq/${id}`)
+        const data = await res.json()
+        setClient(data)
+    }
+    useEffect(() => {
+
+        fetchFaq()
+    }, [])
+
 return (
-    <ClientProvider.Provider value={{clients, client, getClient }}>
-    {Children}
-    </ClientProvider.Provider>
+    <ClientsContext.Provider value={{ clients, client, getClient, get }}>
+    { children }
+    </ClientsContext.Provider>
 )
+}
+export default ClientProvider

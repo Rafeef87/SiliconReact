@@ -1,14 +1,14 @@
 
 
-const FaqCard = ({client, index, isOpen, handleQuestionClick}) => {
+const FaqCard = ({question, index, isOpen, handleQuestionClick}) => {
     
 
   return (
    
     <div className="faq-card">
-        <div className={`client ${isOpen === index ? 'open' : ''} `} onClick={() => handleQuestionClick(index)} >
+        <div className={`question ${isOpen === index ? 'open' : ''} `} onClick={() => handleQuestionClick(index)} >
             
-            <h3>{client.title}</h3>
+            <h3>{question.title}</h3>
             
             <a className="btn-circle">
                 <span>
@@ -18,7 +18,7 @@ const FaqCard = ({client, index, isOpen, handleQuestionClick}) => {
         </div>
         {isOpen === index && (
         <div className="answer" >
-            <p>{client.content}</p>
+            <p>{question.content}</p>
         </div>
         )}
     </div>

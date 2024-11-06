@@ -22,23 +22,8 @@ const ClientProvider = ({ children }) => {
         fetchTimonials()
     }, [])
 
-    const fetchFaq = async () => {
-        const res = await fetch(`${baseApiUri}/faq`)
-        const data = await res.json()
-        setClients(data)
-    }
-    const get = async (id) => {
-        const res = await fetch(`${baseApiUri}/faq/${id}`)
-        const data = await res.json()
-        setClient(data)
-    }
-    useEffect(() => {
-
-        fetchFaq()
-    }, [])
-
 return (
-    <ClientsContext.Provider value={{ clients, client, getClient, get }}>
+    <ClientsContext.Provider value={{ clients, client, getClient }}>
     { children }
     </ClientsContext.Provider>
 )

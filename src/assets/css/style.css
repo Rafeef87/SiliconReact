@@ -974,7 +974,6 @@ header .container {
     padding-top: 1rem;
     padding-bottom: 1rem;
     .container {
-       
 
         .content {
             text-align: center;
@@ -1001,16 +1000,16 @@ header .container {
         }
         .que-wrapper {
             margin: 5rem auto;
-            
+         
         }
-        .client {
+        .question {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: .7rem;
             cursor: pointer;
-            
 
+            
             p {
                 font-size: 1.3rem;
                 font-weight: 600;

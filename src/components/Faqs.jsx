@@ -4,11 +4,12 @@ import message from '../assets/images/message.svg'
 
 import { Link } from 'react-router-dom'
 import FaqCard from './FaqCard'
-import { ClientsContext } from '../context/ClientsContext'
+import { FaqContext } from '../context/FaqContext'
+
 
 
 const Faqs = () => {
-    const { clients } = useContext(ClientsContext)
+    const { questions } = useContext(FaqContext)
 
     const [open, setOpen] = useState(false)
     const handleQuestionClick = (index) => {
@@ -24,8 +25,8 @@ const Faqs = () => {
             </div>
             
             <div className="que-wrapper">
-                { clients.map((client, index) => (
-                    <FaqCard key={client.id} client={client} handleQuestionClick={handleQuestionClick} isOpen={open} index={index} />
+                { questions.map((question, index) => (
+                    <FaqCard key={question.id} question={question} handleQuestionClick={handleQuestionClick} isOpen={open} index={index} />
                     ))}
             </div>
 

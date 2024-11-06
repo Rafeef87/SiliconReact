@@ -21,7 +21,7 @@ const Testimonials = () => {
     <section id="testimonials">
         <div className="container">
             <h2 className="headline">Clients are Loving Our App</h2>
-            {clients.map((client, index) => (
+            {clients.map((client) => (
                 <div key={client.id} >
                     <img src={quotes} alt="quotes icon." />
                     <div className='colors'>

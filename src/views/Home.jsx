@@ -9,6 +9,7 @@ import Testimonials from '../components/Testimonials'
 import Faqs from '../components/Faqs'
 import Subscribe from '../components/Subscribe'
 import ClientProvider  from '../context/ClientsContext'
+import FaqProvider from '../context/FaqContext'
 
 const Home = () => {
  
@@ -21,9 +22,10 @@ const Home = () => {
       <Featuer />
       <ClientProvider>
         <Testimonials />
+      </ClientProvider>  
+      <FaqProvider>
         <Faqs />
-      </ClientProvider>
-      
+      </FaqProvider>
       <Subscribe />
     </>
   )

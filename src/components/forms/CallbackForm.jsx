@@ -26,31 +26,36 @@ const CallbackForm = () => {
     const validateForm = () => {
         const newErrors = {}
         if (!/^[A-Öa-ö\s\-]{2,}$/.test(formData.fullName)){
-        newErrors.fullName = "Must be at least 2 charachter long, no numbers." 
+            newErrors.fullName = "Must be at least 2 charachter long, no numbers." 
         }else if (!/^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z0-9]{2,}$/.test(formData.email)){
-        newErrors.email =  "Must be an valid email (ex:username@example.com)"
+            newErrors.email =  "Must be an valid email (ex:username@example.com)"
         }
         setErrors(newErrors)
         return Object.keys(newErrors).length === 0;
     }
+    const handleOk = () => {
+        setSubmitted(false)
+    }
     const handleSubmit = async (e) => {
         e.preventDefault()
-       if(validateForm()){
-        const res = await axios.post('https://win24-assignment.azurewebsites.net/api/forms/contact', formData)
-        console.log('Form valid', res.data)
-        setSubmitted(true)
-       } else {
-        console.log('Form is invalid')
-       }
+       if(validateForm()) {
+            const res = await axios.post('https://win24-assignment.azurewebsites.net/api/forms/contact', formData)
+            console.log('Form valid', res.data)
+            setSubmitted(true)
+        } else {
+            console.log('Form is invalid')
+        }
     }
+
     if(submitted) {
         return(
-            <div>
-                <h1>We will get back to you as soon as we can.</h1>
+            <div className="container informatbox">
+                <h3>We will get back to you as soon as we can.</h3>
+                <button className='btn-primary' onClick={handleOk}>OK</button>
             </div>
         )
     }
-
+    
   return (
     <form id="regForm" onSubmit={handleSubmit} noValidate>
         <div className="input-group">

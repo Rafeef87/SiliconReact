@@ -27,7 +27,7 @@ const Navbar = () => {
                         <i className="fa-duotone fa-solid fa-user-large"></i>
                         <span>Sign in / up</span>
                     </a>
-                    <button className= {`btn-mobile  ${showMenu ? 'show' : ''}`} onClick={toggleMenu}>
+                    <button className= {`btn-mobile ${showMenu ? 'show' : ''}`} onClick={toggleMenu}>
                         <i className="fa-regular fa-bars"></i>
                     </button>
         </div>   

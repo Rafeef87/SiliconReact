@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 
 import { ClientsContext } from '../context/ClientsContext'
 import quotes from '../assets/images/quotes.svg'
@@ -6,7 +6,7 @@ import quotes from '../assets/images/quotes.svg'
 
 const Testimonials = () => {
     
-    const { clients, starRating } = useContext(ClientsContext)      
+    const { clients } = useContext(ClientsContext)      
 
     
 
@@ -21,15 +21,11 @@ const Testimonials = () => {
                         {[...Array(5)].map((_, index) => (
                             <span key={`${client.id}-star-${index}`}>
                                 <i
-                                    className={`fa-light fa-star star-icon ${
-                                        index < client.starRating ? 'active' : ''
-                                    }`}
+                                    className={`fa-light fa-star star-icon ${index < client.starRating ? 'active' : ''}`}
                                 ></i>
                             </span>
                         ))}    
-                </div>
-                
-
+                    </div>
                     <p>{client.comment}</p>
                     
                     <img className="icon" src={client.avatarUrl} alt="Girl icon." />

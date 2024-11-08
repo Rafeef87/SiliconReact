@@ -842,6 +842,7 @@ header .container {
 #testimonials {
 
     .container {
+        display: none;
        .headline {
         display: none;
        }
@@ -957,10 +958,9 @@ header .container {
         }
         .star-icon.active {
             color: gold;
+            fill: transparent;
         }
-    }
-    
-     
+    }   
 }
 
 
@@ -1212,7 +1212,7 @@ header .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            text-decoration: center;
+            text-align: center;
         } 
         .btn-subscribe:hover {
             background-color: var(--color-gray);
@@ -1227,7 +1227,7 @@ header .container {
         .container {
             display: flex;
             justify-content: space-between;
-            align-items: space-between;
+            align-items: center;
             padding: 5rem 1rem;
             gap: 1rem;
             height: 200px;
@@ -1240,7 +1240,7 @@ header .container {
         .container {
             display: flex;
             flex-direction: row;
-            justify-content: space-betweence;
+            justify-content: space-between;
             align-items: center;
             padding: 5rem 1rem ;
             gap: 1rem;
@@ -1466,17 +1466,7 @@ footer {
         width: 100%;
     }
     
-    .specialist {
-        position: relative;
-        .icon {
-            position: absolute;
-            top: 50%;
-            transform: translatey(-50%);
-            right: .5rem;
-            padding: 0;
-            margin: 0;
-    }
-    }
+ 
 }
 #map-contact {
     .container {

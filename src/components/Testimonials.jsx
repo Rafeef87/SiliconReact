@@ -21,7 +21,7 @@ const Testimonials = () => {
                         {[...Array(5)].map((_, index) => (
                             <span key={`${client.id}-star-${index}`}>
                                 <i
-                                    className={`fa-light fa-star star-icon ${index < client.starRating ? 'active' : ''}`}
+                                    className={`fa-sharp fa-star star-icon ${index < client.starRating ? 'active' : ''}`}
                                 ></i>
                             </span>
                         ))}    

@@ -1164,6 +1164,7 @@ header .container {
             width: 350px;
         }
         .email {
+            position: relative;
             display: flex;
             justify-content: right;
             align-items: right;
@@ -1180,15 +1181,15 @@ header .container {
             }
 
         }
-        .email {
-            position: relative;
+       
+            
             .email-icon {
                 position: absolute;
                 top: 50%;
                 left: 2rem;
                 transform: translateY(-50%);
                 color: var(--color-gray);
-        }
+      
         
         }
         .mail {
@@ -1197,12 +1198,12 @@ header .container {
             padding-left: 3rem;
             height: 50px;
         }
-        
         .form-group {
-            
             span {
-                color: red;
-            }
+             color: red;
+            
+            }   
+        
         } 
         .btn-subscribe {
             background-color: var(--color-primary);

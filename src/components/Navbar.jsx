@@ -10,6 +10,11 @@ const Navbar = () => {
     const toggleMenu = () => {
         setShowMenu(!showMenu)
     }
+    const [activeLink, setActiveLink] = useState('/')
+
+    const handleLinkClick = (Link) => {
+        setActiveLink(Link)
+    }
   return (
     <div className="container">
                     <Link id="logo" to="/">
@@ -17,8 +22,8 @@ const Navbar = () => {
                         <img className="show-dark" src={solidDark} alt="Silicon Logotype." />
                     </Link>
                     <nav id="main-menu" className={`navbar ${showMenu ? 'show' : ''}`} >
-                        <Link className="nav-link" to="/">Features</Link>
-                        <Link className="nav-link" to="/contact">Contact</Link>
+                        <Link className= {`nav-link ${activeLink === '/' ? 'active' : ''}`} onClick={() => handleLinkClick('/')} to="/">Features</Link>
+                        <Link className= {`nav-link ${activeLink === '/contact' ? 'active' : ''}`} onClick={() => handleLinkClick('/contact')} to="/contact">Contact</Link>
                         
                     </nav>
                     <DarkModeSwitch />

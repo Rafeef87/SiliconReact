@@ -52,14 +52,14 @@ const SubscibeForm = () => {
   }
   
   return (
-    <form onSubmit={handleSubmit} noValidate className="email">
+    <form className="email" onSubmit={handleSubmit} noValidate>
         <div className='form-group'>
             <i className="fa-light fa-envelope email-icon"></i>
             <input className="mail" type="email" name='email' placeholder='Email' value={formData.email} onChange={handleInputChange} required  />
             <span>{errors.email && <span>{errors.email}</span>}</span>
         </div>
         <button type='submit' className="btn-subscribe">Subscribe</button>
-
+      
     </form>
   )
 }

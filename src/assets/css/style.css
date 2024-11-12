@@ -15,7 +15,7 @@
     --color-bg-light:var(var(--color-gray100));
     --color-bg-gray: var(--color-gray100);
     --color-homepage: rgba(147, 151, 173, 1);
-    
+    --color-bg-gradient: linear-gradient(0deg, #6365f11a 0%, #da46ef0d 42%, #ffffff 83%);
     --container-padding: 1rem;
     --transition-time: all 0.25;
 }
@@ -41,6 +41,7 @@ html {
     --color-gray100: rgba(255, 255, 255, 0.05);
     --color-gray900: var(--color-white);
     --color-bg-featuer-icon: linear-gradient(0deg, rgba(99,102,241,1) 0%, rgba(153,87,240,1) 50%, rgba(217,70,239,1) 100%);
+    --color-bg-gradient: linear-gradient(0deg, #6365f11a 0%, #da46ef0d 42%, #ffffff 83%);
     --transition-time: all 0.25;
     h1, h2, h3, h4, h5, h6 {
         color: var(--color-white);
@@ -856,6 +857,7 @@ header .container {
     @media (min-width: 1400px) {
 
         .container {
+            
             .headline {
                 display: block;
                }
@@ -873,83 +875,49 @@ header .container {
             justify-content: space-between;
             align-items: start;
             margin-top: 2rem;
-            padding-top: 2rem;
-            gap: 2rem;
-       
+            padding: 3rem;
+            gap: 3rem;
+            background-color: var(--color-bg-gradient);
             .headline {
             
-            font-size: 40px;
+            font-size: 35px;
             }
-        .girl {
-            position: relative;
-            .text {
-                position: absolute;
-                top: 70%;
-                left: 4rem;
-                transform: translateY(-50%);
-                color: var(--color-gray);
-                font-size: 18px;
-                height: 100%;
-                width: 300px;
-            }
-        }
-        .boy {
-            position: relative;
-            .text {
-                position: absolute;
-                top: 70%;
-                left: 4rem;
-                transform: translateY(-50%);
-                color: var(--color-gray);
-                font-size: 18px;
-                height: 100%;
-                width: 300px;
-            }
-        }
-        
+
     } 
     }
-    .girl-rating {
+    .rating {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: start;
-        gap: 1rem;
-        } 
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 2rem;
+        border-radius: .5rem;
+        border: 1px solid var(--color-border-gray);
+        .name {
+            position: relative;
+            .text {
+                position: absolute;
+                top: 70%;
+                left: 4rem;
+                transform: translateY(-50%);
+                color: var(--color-gray);
+                font-size: 18px;
+                height: 100%;
+                width: 300px;
+            }
+        }
+        .client-name {
+            color: var(--color-gray900);
+        }
+    }
 
     .p {
         font-size: 14px;
         color: var(--color-gray700);
+        padding: 2rem;
     }
-    .girl {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 1rem;
-        gap: 1rem;
-        padding: 1rem;
-        width: 300px;
-    }   
     
-    .boy-rating {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: start;
-        gap: 1rem;
-       
-    }   
-    .boy {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 1rem;
-        gap: 1rem;
-        padding: 1rem;
-        width: 300px;
-    }
     .colors {
 
         .star-icon {
@@ -969,7 +937,10 @@ header .container {
     padding-top: 1rem;
     padding-bottom: 1rem;
     .container {
-
+        .contact1 {
+           display: none;
+        }
+        
         .content {
             text-align: center;
             padding: var(--container-padding);
@@ -995,6 +966,13 @@ header .container {
         }
         .que-wrapper {
             margin: 5rem auto;
+
+         
+        }
+        .faq-card {
+            padding: .5rem;
+            border-radius: .5rem;
+            border: 1px solid var(--color-border-gray);
          
         }
         .question {
@@ -1006,6 +984,7 @@ header .container {
 
             
             p {
+                padding: .5rem;
                 font-size: 1.3rem;
                 font-weight: 600;
             }
@@ -1068,7 +1047,10 @@ header .container {
         .container {
             display: flex;
             flex-direction: column;
-            
+           
+            .contact1 {
+                display: none;
+            }
             .btn-contact {
                 display: none;
             }
@@ -1079,6 +1061,7 @@ header .container {
                 align-items: center;
                 gap: 1rem;
                 height: 200px;
+            
             } 
         }
 
@@ -1115,19 +1098,28 @@ header .container {
         .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-areas: "faqs" "que-wrapper";
-
+            grid-template-areas: "contact-desktop" "que-wrapper";
+            .contact1 {
+                display: block;
+            }
+            .contact{
+                display: none;
+            }
             .content {
-                grid-area: "faqs";
+                grid-area: "contact-desktop";
                 text-align: start;
                 margin-bottom: 2rem;
-                height: 200px;
-
+               p {
+                    font-size: 20px;
+               }
             } 
-            .contact {
-                grid-area: "faqs";
-                margin-top: 2rem;
-
+            .contact1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 1rem;
+                height: 200px;
                 
             }
             .que-wrapper {
@@ -1135,10 +1127,10 @@ header .container {
                 margin: 5rem auto;
 
             }
-            
-            .contant, .contact {
-            margin-top: 2rem;
+            h2 {
+                font-size: 35px;
             }
+           
         }
     }
 }
@@ -1452,7 +1444,7 @@ footer {
         padding: .4rem;
         border-radius: .5rem;
         border: 1px solid rgba(212, 215, 229, 1);
-        background-color: rgba(212, 215, 229, 0.554);
+        background-color: var(--color-gray100);
         
     }
     .input-group {

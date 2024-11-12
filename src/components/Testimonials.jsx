@@ -15,7 +15,7 @@ const Testimonials = () => {
         <div className="container">
             <h2 className="headline">Clients are Loving Our App</h2>
             {clients.map((client) => (
-                <div key={client.id} >
+                <div className="rating" key={client.id} >
                     <img src={quotes} alt="quotes icon." />
                     <div className="colors">
                         {[...Array(5)].map((_, index) => (
@@ -27,11 +27,12 @@ const Testimonials = () => {
                         ))}    
                     </div>
                     <p>{client.comment}</p>
-                    
+                    <div  className='name'>
                     <img className="icon" src={client.avatarUrl} alt="Girl icon." />
                     <div className='text'>
-                        <p>{client.author}</p>
+                        <p className='client-name'>{client.author}</p>
                         <p>{client.jobRole}</p>
+                    </div>
                     </div>
                     
                 </div>

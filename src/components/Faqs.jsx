@@ -19,9 +19,34 @@ const Faqs = () => {
   return (
     <section id="faqs">
         <div className="container">
-            <div className="content">
-                <h2>Any questions? Check out the FAQs</h2>
-                <p>Still have unanswered questions and need to get in touch?</p>
+            <div className='contact-desktop'>
+                <div className="content">
+                    <h2>Any questions?</h2>
+                    <h2>Check out the FAQs</h2>
+                    <p>Still have unanswered questions and need to get in touch?</p>
+                </div>
+                <div className="contact1">
+                    <div className="tel-contact">
+                        <img src= {telefon} alt="Telephone image." />
+                        <p>Still have  questions?</p>
+                        <Link to="/contact">
+                            <span>Contact us </span>
+                            <span className="btn">
+                                <i className="fa-regular fa-arrow-right"></i>
+                            </span>
+                        </Link>
+                    </div>
+                    <div className="sms-contact">
+                        <img src= {message} alt="SMS image." />
+                        <p>Don't like phone calls?</p>
+                        <Link to="/contact" className="green-text">
+                            <span>Contact us </span>
+                            <span className="btn"> 
+                                <i className="fa-regular fa-arrow-right"></i>
+                            </span>
+                        </Link>
+                    </div>
+                </div>
             </div>
             
             <div className="que-wrapper">
@@ -29,7 +54,6 @@ const Faqs = () => {
                     <FaqCard key={question.id} question={question} handleQuestionClick={handleQuestionClick} isOpen={open} index={index} />
                     ))}
             </div>
-
             <a id="contact-us-now" href="/contact.html" className="btn-contact">Contact us now</a>
 
             <div className="contact">

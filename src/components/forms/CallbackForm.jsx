@@ -35,6 +35,7 @@ const CallbackForm = () => {
     }
     const handleOk = () => {
         setSubmitted(false)
+        setFormData({fullName: '', email: '', specialist: options[0].id,})
     }
     const handleSubmit = async (e) => {
         e.preventDefault()

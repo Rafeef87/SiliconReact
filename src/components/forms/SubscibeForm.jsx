@@ -31,6 +31,7 @@ const SubscibeForm = () => {
   } 
   const handleOk = () => {
     setSubmitted(false)
+    setFormData({})
   }
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -59,7 +60,6 @@ const SubscibeForm = () => {
             <span>{errors.email && <span>{errors.email}</span>}</span>
         </div>
         <button type='submit' className="btn-subscribe">Subscribe</button>
-      
     </form>
   )
 }

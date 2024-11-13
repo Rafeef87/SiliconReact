@@ -11,9 +11,7 @@ const Subscribe = () => {
                     <h2 className="hide-text">Subscribe to our newsletter </h2>
                     <h2 className="show">Subscribe to our newsletter to stay informed about latest updates</h2>
                   </div>
-                  <div className="email">
-                    <SubscibeForm />
-                  </div>
+                  <SubscibeForm />
                 </div>
     </section>
   )

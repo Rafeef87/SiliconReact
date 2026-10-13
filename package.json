@@ -30,5 +30,12 @@
     "globals": "^15.11.0",
     "hint": "^7.1.13",
     "vite": "^5.4.9"
-  }
+  },
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "deploy": "gh-pages -d dist"
+}
 }
